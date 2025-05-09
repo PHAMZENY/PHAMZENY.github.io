@@ -114,53 +114,62 @@
         </div>
     </div>
 
-
     <!-- Education Section -->
     <section id="education" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
-        <!-- Decorative elements similar to the splatter in the reference image -->
-        <div class="absolute top-0 right-0 w-96 h-96">
-            <div class="absolute top-10 right-10 w-2 h-2 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-20 right-20 w-3 h-3 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-15 right-40 w-1 h-1 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-30 right-60 w-2 h-2 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-40 right-20 w-1 h-1 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-50 right-80 w-3 h-3 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-60 right-30 w-2 h-2 rounded-full bg-photo-sky"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 pointer-events-none">
+            <div class="absolute top-10 right-10 w-2 h-2 rounded-full bg-photo-sky/40"></div>
+            <div class="absolute top-20 right-20 w-3 h-3 rounded-full bg-photo-sky/40"></div>
+            <div class="absolute top-15 right-40 w-1 h-1 rounded-full bg-photo-sky/40"></div>
+            <div class="absolute top-30 right-60 w-2 h-2 rounded-full bg-photo-sky/40"></div>
         </div>
 
-        <!-- Education Header -->
-        <div class="p-8">
-            <h2 class="text-4xl font-bold text-photo-charcoal mb-12">EDUCATION</h2>
+        <div class="p-8 md:p-12">
+            <div class="flex items-center mb-12">
+                <div class="h-1 w-16 bg-photo-sky mr-4"></div>
+                <h2 class="text-4xl font-bold text-photo-charcoal">Education</h2>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <!-- Left side - Image -->
-                <div class="rounded-lg overflow-hidden">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Education environment" class="w-full h-full object-cover" />
-                </div>
-
-                <!-- Right side - Education details -->
-                <div class="space-y-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Left side - Education details -->
+                <div class="space-y-12">
                     <!-- First education entry -->
-                    <div>
-                        <h3 class="text-2xl font-bold text-photo-sky mb-4">숭실대학교-일반대학원-국어국문</h3>
-                        <p class="text-photo-charcoal text-base text-justify">
-                            국어국문학과 석사 학위. 한국어 언어학 및 문화 연구 전공. '베트남 한국어 학습자의 외래어 의미 인식 양상 연구 - 영어에서 온 의미 변화 외래어를 중심으로-'주제로 논문 완료. 학업期间 TOPIK 6급(최고급) 취득. 문화 교류 프로그램 및 학술 회의 참여.
-                        </p>
+                    <div class="relative pl-8 border-l-2 border-photo-sky">
+                        <div class="absolute left-0 top-0 w-4 h-4 bg-photo-sky rounded-full -translate-x-[10px]"></div>
+                        <span class="text-sm text-photo-sky font-medium mb-2 block">2020 - 2022</span>
+                        <h3 class="text-2xl font-bold text-photo-charcoal mb-2">숭실대학교</h3>
+                        <h4 class="text-xl text-photo-sky mb-4">국어국문학과 석사</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 한국어 언어학 및 문화 연구 전공</li>
+                            <li>• 논문: '베트남 한국어 학습자의 외래어 의미 인식 양상 연구'</li>
+                            <li>• TOPIK 6급(최고급) 취득</li>
+                            <li>• 문화 교류 프로그램 및 학술 회의 참여</li>
+                        </ul>
                     </div>
 
                     <!-- Second education entry -->
-                    <div>
-                        <h3 class="text-2xl font-bold text-photo-sky mb-4">다낭 외국어대학교-영어 통번역</h3>
-                        <p class="text-photo-charcoal text-base text-justify">
-                            영어 통번역 학사 학위. 통번역 및 크로스컬쳐 커뮤니케이션 분야의 전공 수료. 다양한 언어 교환 활동 및 적극적인 교외 활동 참여. 영어 CEFR C1 수준 취득. 
-                        </p>
+                    <div class="relative pl-8 border-l-2 border-photo-sky">
+                        <div class="absolute left-0 top-0 w-4 h-4 bg-photo-sky rounded-full -translate-x-[10px]"></div>
+                        <span class="text-sm text-photo-sky font-medium mb-2 block">2016 - 2020</span>
+                        <h3 class="text-2xl font-bold text-photo-charcoal mb-2">다낭 외국어대학교</h3>
+                        <h4 class="text-xl text-photo-sky mb-4">영어 통번역학과</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 통번역 및 크로스컬쳐 커뮤니케이션 전공</li>
+                            <li>• 영어 CEFR C1 수준 취득</li>
+                            <li>• 다양한 언어 교환 활동 참여</li>
+                            <li>• 우수 학업 성적 유지</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    
- <!-- Certifications -->
+
+                <!-- Right side - Image and Certifications -->
+                <div class="space-y-8">
+                    <div class="rounded-2xl overflow-hidden shadow-lg">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Nx6GSE87wTFHEYXlgeGZkTpYw479yu.png" 
+                             alt="Educational achievements" 
+                             class="w-full h-auto object-cover" />
+                    </div>
+                    
+                    <!-- Certifications -->
                     <div class="bg-photo-sky/5 p-6 rounded-2xl">
                         <h3 class="text-xl font-bold text-photo-charcoal mb-4">Certifications</h3>
                         <div class="space-y-4">
@@ -204,7 +213,74 @@
         </div>
     </section>
 
-         
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
+        <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-photo-sky/10"></div>
+        
+        <div class="p-8 md:p-12">
+            <div class="flex items-center mb-12">
+                <div class="h-1 w-16 bg-photo-sky mr-4"></div>
+                <h2 class="text-4xl font-bold text-photo-charcoal">Professional Skills</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Left side - Language Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold text-photo-sky mb-8">Language Proficiency</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div>
+                                    <span class="font-medium text-photo-charcoal">베트남어</span>
+                                    <span class="text-sm text-gray-500 ml-2">Native</span>
+                                </div>
+                                <span class="text-photo-sky">100%</span>
+                            </div>
+                            <div class="w-full bg-photo-stone/30 rounded-full h-2">
+                                <div class="bg-photo-sky h-2 rounded-full transition-all duration-500" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div>
+                                    <span class="font-medium text-photo-charcoal">한국어</span>
+                                    <span class="text-sm text-gray-500 ml-2">TOPIK 6</span>
+                                </div>
+                                <span class="text-photo-sky">95%</span>
+                            </div>
+                            <div class="w-full bg-photo-stone/30 rounded-full h-2">
+                                <div class="bg-photo-sky h-2 rounded-full transition-all duration-500" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div>
+                                    <span class="font-medium text-photo-charcoal">영어</span>
+                                    <span class="text-sm text-gray-500 ml-2">CEFR C1</span>
+                                </div>
+                                <span class="text-photo-sky">90%</span>
+                            </div>
+                            <div class="w-full bg-photo-stone/30 rounded-full h-2">
+                                <div class="bg-photo-sky h-2 rounded-full transition-all duration-500" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div>
+                                    <span class="font-medium text-photo-charcoal">중국어</span>
+                                    <span class="text-sm text-gray-500 ml-2">HSK 4</span>
+                                </div>
+                                <span class="text-photo-sky">70%</span>
+                            </div>
+                            <div class="w-full bg-photo-stone/30 rounded-full h-2">
+                                <div class="bg-photo-sky h-2 rounded-full transition-all duration-500" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Professional Skills Grid -->
                     <h3 class="text-2xl font-bold text-photo-sky mt-12 mb-8">Core Competencies</h3>
