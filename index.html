@@ -1,145 +1,663 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircleIcon, XCircleIcon } from "lucide-react"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pham Thi Nhi - Professional Portfolio | Korean Language Teacher & Interpreter">
+    <meta name="keywords" content="Korean Teacher, Interpreter, Translator, Vietnamese, English, Chinese">
+    <meta name="author" content="Pham Thi Nhi">
+    <title>Pham Thi Nhi - Professional Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        photo: {
+                            sky: '#7da3d1',
+                            stone: '#d2d2d2',
+                            charcoal: '#4a4a4a',
+                            building: '#f5f5f5'
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen p-4">
+    <!-- Navigation -->
+    <nav class="max-w-5xl mx-auto py-4 mb-8">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-bold text-photo-charcoal">PTN</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-photo-charcoal hover:text-photo-sky transition-colors">About</a>
+                <a href="#education" class="text-photo-charcoal hover:text-photo-sky transition-colors">Education</a>
+                <a href="#skills" class="text-photo-charcoal hover:text-photo-sky transition-colors">Skills</a>
+                <a href="#experience" class="text-photo-charcoal hover:text-photo-sky transition-colors">Experience</a>
+                <a href="#contact" class="text-photo-charcoal hover:text-photo-sky transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-export default function QuizResultsPage({ params }: { params: { id: string } }) {
-  // Mock quiz result data
-  const quizResult = {
-    id: params.id,
-    title: "Math Quiz - Algebra",
-    date: "May 9, 2024",
-    score: 75,
-    totalQuestions: 20,
-    correctAnswers: 15,
-    timeSpent: "18:45",
-    questions: [
-      {
-        id: 1,
-        text: "What is the value of x in the equation 2x + 5 = 13?",
-        userAnswer: "b",
-        correctAnswer: "b",
-        isCorrect: true,
-        options: [
-          { id: "a", text: "3" },
-          { id: "b", text: "4" },
-          { id: "c", text: "5" },
-          { id: "d", text: "6" },
-        ],
-      },
-      {
-        id: 2,
-        text: "Simplify the expression: 3(2x - 4) + 5",
-        userAnswer: "a",
-        correctAnswer: "c",
-        isCorrect: false,
-        options: [
-          { id: "a", text: "6x - 7" },
-          { id: "b", text: "6x - 12 + 5" },
-          { id: "c", text: "6x - 7" },
-          { id: "d", text: "6x + 5" },
-        ],
-      },
-      {
-        id: 3,
-        text: "Solve for y: 4y - 7 = 9",
-        userAnswer: "a",
-        correctAnswer: "a",
-        isCorrect: true,
-        options: [
-          { id: "a", text: "y = 4" },
-          { id: "b", text: "y = 16/4" },
-          { id: "c", text: "y = 2" },
-          { id: "d", text: "y = 8" },
-        ],
-      },
-    ],
-  }
-
-  return (
-    <div className="container max-w-4xl py-8">
-      <Card className="mb-6">
-        <CardHeader>
-          <div className="flex justify-between items-center">
-            <div>
-              <CardTitle className="text-2xl">{quizResult.title} - Results</CardTitle>
-              <CardDescription>Completed on {quizResult.date}</CardDescription>
-            </div>
-            <Link href="/dashboard/student">
-              <Button variant="outline">Back to Dashboard</Button>
-            </Link>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-            <div className="bg-muted/50 p-4 rounded-lg text-center">
-              <div className="text-3xl font-bold text-primary">{quizResult.score}%</div>
-              <div className="text-sm text-muted-foreground">Score</div>
-            </div>
-            <div className="bg-muted/50 p-4 rounded-lg text-center">
-              <div className="text-3xl font-bold">
-                {quizResult.correctAnswers}/{quizResult.totalQuestions}
-              </div>
-              <div className="text-sm text-muted-foreground">Correct Answers</div>
-            </div>
-            <div className="bg-muted/50 p-4 rounded-lg text-center">
-              <div className="text-3xl font-bold">{quizResult.timeSpent}</div>
-              <div className="text-sm text-muted-foreground">Time Spent</div>
-            </div>
-            <div className="bg-muted/50 p-4 rounded-lg text-center">
-              <div className="text-3xl font-bold">{quizResult.totalQuestions - quizResult.correctAnswers}</div>
-              <div className="text-sm text-muted-foreground">Incorrect Answers</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <h2 className="text-xl font-bold mb-4">Question Review</h2>
-
-      {quizResult.questions.map((question, index) => (
-        <Card key={question.id} className="mb-4">
-          <CardHeader className="pb-2">
-            <div className="flex items-start gap-2">
-              <div className={`mt-0.5 ${question.isCorrect ? "text-green-500" : "text-red-500"}`}>
-                {question.isCorrect ? <CheckCircleIcon className="h-5 w-5" /> : <XCircleIcon className="h-5 w-5" />}
-              </div>
-              <CardTitle className="text-base">
-                Question {index + 1}: {question.text}
-              </CardTitle>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              {question.options.map((option) => (
-                <div
-                  key={option.id}
-                  className={`p-3 rounded-md border ${
-                    option.id === question.correctAnswer
-                      ? "border-green-500 bg-green-50 dark:bg-green-950/20"
-                      : option.id === question.userAnswer && !question.isCorrect
-                        ? "border-red-500 bg-red-50 dark:bg-red-950/20"
-                        : ""
-                  }`}
-                >
-                  <div className="flex items-center gap-2">
-                    {option.id === question.correctAnswer && <CheckCircleIcon className="h-4 w-4 text-green-500" />}
-                    {option.id === question.userAnswer && !question.isCorrect && (
-                      <XCircleIcon className="h-4 w-4 text-red-500" />
-                    )}
-                    <span>{option.text}</span>
-                  </div>
+    <!-- Hero Section -->
+    <div id="about" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
+        <!-- Decorative elements -->
+        <div class="absolute top-1/2 left-3/4 w-24 h-24 rounded-full bg-photo-stone/30 blur-sm"></div>
+        <div class="absolute bottom-10 left-10 w-16 h-16 rounded-full bg-photo-stone/30 blur-sm"></div>
+        <div class="absolute top-20 right-10 w-20 h-20 rounded-full bg-photo-sky/20 blur-sm"></div>
+        
+        <div class="flex flex-col md:flex-row">
+            <!-- Left section with image -->
+            <div class="relative w-full md:w-1/2">
+                <!-- Curved border -->
+                <div class="hidden md:block absolute top-0 right-0 bottom-0 w-24 bg-white z-10">
+                    <div class="absolute top-0 right-0 bottom-0 left-0 bg-photo-charcoal rounded-l-full"></div>
                 </div>
-              ))}
+                
+                <!-- Image container with circular crop -->
+                <div class="relative h-full">
+                    <div class="md:absolute inset-0 m-6 md:m-10 rounded-full overflow-hidden border-8 border-white shadow-lg">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-90mphZn4ZPADa3RQR4IxGfDZ7r7ZIP.png" 
+                             alt="Nhi at a modern architectural building" 
+                             class="w-full h-full object-cover transition-transform hover:scale-105 duration-300" />
+                    </div>
+                </div>
             </div>
-            {!question.isCorrect && (
-              <div className="mt-3 text-sm">
-                <span className="font-medium">Correct answer:</span>{" "}
-                {question.options.find((o) => o.id === question.correctAnswer)?.text}
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      ))}
+            
+            <!-- Right section with text content -->
+            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                <div class="inline-block bg-photo-sky/10 text-photo-sky px-6 py-2 rounded-full text-sm font-medium mb-6">
+                    Korean Language Professional
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold text-photo-charcoal mb-4">
+                    PHAM THI NHI
+                </h1>
+                
+                <div class="h-1 w-20 bg-photo-sky mb-6"></div>
+                
+                <p class="text-gray-700 leading-relaxed mb-8 text-lg">
+                    안녕하세요! 저는 <strong>팜티니</strong>입니다. 한국어 교사이자 통역사로서, 베트남과 한국 문화를 잇는 열정적인 다리 역할을 하고 있습니다.
+                </p>
+
+                <p class="text-gray-600 leading-relaxed mb-8">
+                    다낭 외국어대학교에서 영어 통번역 학사 학위와 숭실대학교에서 한국어문학 석사 학위를 취득하였습니다. 한국어 능력시험(TOPIK) 6급, 영어 CEFR C1 수준, 베트남어는 모국어이며, 중국어는 HSK 4급(중급 수준)을 보유하고 있습니다.
+                </p>
+
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-photo-sky text-white px-8 py-3 rounded-full hover:bg-photo-charcoal transition-colors">
+                        Contact Me
+                    </a>
+                    <a href="#experience" class="border-2 border-photo-sky text-photo-sky px-8 py-3 rounded-full hover:bg-photo-sky hover:text-white transition-colors">
+                        View Experience
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  )
-}
+
+    <!-- Education Section -->
+    <section id="education" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
+        <div class="absolute top-0 right-0 w-96 h-96 pointer-events-none">
+            <div class="absolute top-10 right-10 w-2 h-2 rounded-full bg-photo-sky/40"></div>
+            <div class="absolute top-20 right-20 w-3 h-3 rounded-full bg-photo-sky/40"></div>
+            <div class="absolute top-15 right-40 w-1 h-1 rounded-full bg-photo-sky/40"></div>
+            <div class="absolute top-30 right-60 w-2 h-2 rounded-full bg-photo-sky/40"></div>
+        </div>
+
+        <div class="p-8 md:p-12">
+            <div class="flex items-center mb-12">
+                <div class="h-1 w-16 bg-photo-sky mr-4"></div>
+                <h2 class="text-4xl font-bold text-photo-charcoal">Education</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Left side - Education details -->
+                <div class="space-y-12">
+                    <!-- First education entry -->
+                    <div class="relative pl-8 border-l-2 border-photo-sky">
+                        <div class="absolute left-0 top-0 w-4 h-4 bg-photo-sky rounded-full -translate-x-[10px]"></div>
+                        <span class="text-sm text-photo-sky font-medium mb-2 block">2020 - 2022</span>
+                        <h3 class="text-2xl font-bold text-photo-charcoal mb-2">숭실대학교</h3>
+                        <h4 class="text-xl text-photo-sky mb-4">국어국문학과 석사</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 한국어 언어학 및 문화 연구 전공</li>
+                            <li>• 논문: '베트남 한국어 학습자의 외래어 의미 인식 양상 연구'</li>
+                            <li>• TOPIK 6급(최고급) 취득</li>
+                            <li>• 문화 교류 프로그램 및 학술 회의 참여</li>
+                        </ul>
+                    </div>
+
+                    <!-- Second education entry -->
+                    <div class="relative pl-8 border-l-2 border-photo-sky">
+                        <div class="absolute left-0 top-0 w-4 h-4 bg-photo-sky rounded-full -translate-x-[10px]"></div>
+                        <span class="text-sm text-photo-sky font-medium mb-2 block">2016 - 2020</span>
+                        <h3 class="text-2xl font-bold text-photo-charcoal mb-2">다낭 외국어대학교</h3>
+                        <h4 class="text-xl text-photo-sky mb-4">영어 통번역학과</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 통번역 및 크로스컬쳐 커뮤니케이션 전공</li>
+                            <li>• 영어 CEFR C1 수준 취득</li>
+                            <li>• 다양한 언어 교환 활동 참여</li>
+                            <li>• 우수 학업 성적 유지</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right side - Image and Certifications -->
+                <div class="space-y-8">
+                    <div class="rounded-2xl overflow-hidden shadow-lg">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Nx6GSE87wTFHEYXlgeGZkTpYw479yu.png" 
+                             alt="Educational achievements" 
+                             class="w-full h-auto object-cover" />
+                    </div>
+                    
+                    <!-- Certifications -->
+                    <div class="bg-photo-sky/5 p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold text-photo-charcoal mb-4">Certifications</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-photo-sky/10 rounded-lg flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-photo-charcoal">TOPIK Level 6</h4>
+                                    <p class="text-sm text-gray-600">Korean Language Proficiency</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-photo-sky/10 rounded-lg flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-photo-charcoal">CEFR C1</h4>
+                                    <p class="text-sm text-gray-600">English Language Proficiency</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-photo-sky/10 rounded-lg flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-photo-charcoal">HSK Level 4</h4>
+                                    <p class="text-sm text-gray-600">Chinese Language Proficiency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
+        <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-photo-sky/10"></div>
+        
+        <div class="p-8 md:p-12">
+            <div class="flex items-center mb-12">
+                <div class="h-1 w-16 bg-photo-sky mr-4"></div>
+                <h2 class="text-4xl font-bold text-photo-charcoal">Professional Skills</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Left side - Language Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold text-photo-sky mb-8">Language Proficiency</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div>
+                                    <span class="font-medium text-photo-charcoal">베트남어</span>
+                                    <span class="text-sm text-gray-500 ml-2">Native</span>
+                                </div>
+                                <span class="text-photo-sky">100%</span>
+                            </div>
+                            <div class="w-full bg-photo-stone/30 rounded-full h-2">
+                                <div class="bg-photo-sky h-2 rounded-full transition-all duration-500" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div>
+                                    <span class="font-medium text-photo-charcoal">한국어</span>
+                                    <span class="text-sm text-gray-500 ml-2">TOPIK 6</span>
+                                </div>
+                                <span class="text-photo-sky">95%</span>
+                            </div>
+                            <div class="w-full bg-photo-stone/30 rounded-full h-2">
+                                <div class="bg-photo-sky h-2 rounded-full transition-all duration-500" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div>
+                                    <span class="font-medium text-photo-charcoal">영어</span>
+                                    <span class="text-sm text-gray-500 ml-2">CEFR C1</span>
+                                </div>
+                                <span class="text-photo-sky">90%</span>
+                            </div>
+                            <div class="w-full bg-photo-stone/30 rounded-full h-2">
+                                <div class="bg-photo-sky h-2 rounded-full transition-all duration-500" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div>
+                                    <span class="font-medium text-photo-charcoal">중국어</span>
+                                    <span class="text-sm text-gray-500 ml-2">HSK 4</span>
+                                </div>
+                                <span class="text-photo-sky">70%</span>
+                            </div>
+                            <div class="w-full bg-photo-stone/30 rounded-full h-2">
+                                <div class="bg-photo-sky h-2 rounded-full transition-all duration-500" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Skills Grid -->
+                    <h3 class="text-2xl font-bold text-photo-sky mt-12 mb-8">Core Competencies</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-photo-sky/5 p-4 rounded-xl">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span class="font-medium text-photo-charcoal">Translation</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-photo-sky/5 p-4 rounded-xl">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                    </svg>
+                                </div>
+                                <span class="font-medium text-photo-charcoal">Interpretation</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-photo-sky/5 p-4 rounded-xl">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </div>
+                                <span class="font-medium text-photo-charcoal">Teaching</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-photo-sky/5 p-4 rounded-xl">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <span class="font-medium text-photo-charcoal">Cultural Bridge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side - Technical Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold text-photo-sky mb-8">Technical & Software Skills</h3>
+                    
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="bg-photo-sky/5 p-6 rounded-xl">
+                            <h4 class="font-bold text-photo-charcoal mb-4">Office Productivity</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium text-photo-charcoal">MS Word</span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium text-photo-charcoal">MS Excel</span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium text-photo-charcoal">PowerPoint</span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium text-photo-charcoal">Google Drive</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-photo-sky/5 p-6 rounded-xl">
+                            <h4 class="font-bold text-photo-charcoal mb-4">Programming & Tools</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M11.93 2c-5.5 0-5.7 2.43-5.7 2.43v2.62H12v.67H4.38c-2.5 0-4.7 1.5-4.7 4.25 0 2.8 2.2 4.3 4.7 4.3h2.12v-2.13c0-2.1 1.8-3.88 3.87-3.88h6.37c1.7 0 3.13-1.4 3.13-3.12V4.43S22.12 2 11.93 2zM8.56 4.12c.63 0 1.13.5 1.13 1.13s-.5 1.12-1.13 1.12c-.6 0-1.12-.5-1.12-.12s.5-1.13 1.12-1.13z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium text-photo-charcoal">Python</span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-photo-sky/10 rounded-lg flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium text-photo-charcoal">HTML/CSS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-photo-sky/5 p-6 rounded-xl">
+                            <h4 class="font-bold text-photo-charcoal mb-4">Additional Skills</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">Project Management</span>
+                                <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">Team Leadership</span>
+                                <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">Cross-cultural Communication</span>
+                                <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">Public Speaking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
+        <div class="absolute bottom-0 right-0 w-40 h-40 rounded-tl-full bg-photo-stone/20"></div>
+        
+        <div class="p-8 md:p-12">
+            <div class="flex items-center mb-12">
+                <div class="h-1 w-16 bg-photo-sky mr-4"></div>
+                <h2 class="text-4xl font-bold text-photo-charcoal">Professional Experience</h2>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-0 top-0 h-full w-0.5 bg-photo-sky/30 ml-8 md:ml-0"></div>
+                
+                <div class="space-y-12">
+                    <!-- Experience Item 1 -->
+                    <div class="relative flex flex-col md:flex-row">
+                        <div class="md:w-1/3 mb-4 md:mb-0">
+                            <div class="flex items-center md:justify-end">
+                                <div class="w-16 h-16 bg-photo-sky rounded-full flex items-center justify-center text-white font-bold md:mr-8 mr-4 shrink-0 relative z-10">
+                                    <span>2022</span>
+                                </div>
+                                <div class="md:text-right md:mr-8 md:hidden">
+                                    <h3 class="text-2xl font-bold text-photo-charcoal">한국어 강사</h3>
+                                    <h4 class="text-xl text-photo-sky">한국어 학원</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-2/3 md:pl-8">
+                            <div class="hidden md:block mb-4">
+                                <h3 class="text-2xl font-bold text-photo-charcoal">한국어 강사</h3>
+                                <h4 class="text-xl text-photo-sky">한국어 학원</h4>
+                            </div>
+                            <div class="bg-photo-sky/5 p-6 rounded-xl">
+                                <p class="text-gray-700 mb-4">
+                                    온라인과 오프라인 수업을 통해 다양한 수준의 학습자들에게 한국어를 가르치고 있습니다. 
+                                    맞춤형 교육 자료를 개발하고, 학습자의 요구에 맞는 커리큘럼을 설계합니다.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">한국어 교육</span>
+                                    <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">커리큘럼 개발</span>
+                                    <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">학습자 맞춤 지도</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Item 2 -->
+                    <div class="relative flex flex-col md:flex-row">
+                        <div class="md:w-1/3 mb-4 md:mb-0">
+                            <div class="flex items-center md:justify-end">
+                                <div class="w-16 h-16 bg-photo-sky rounded-full flex items-center justify-center text-white font-bold md:mr-8 mr-4 shrink-0 relative z-10">
+                                    <span>2018</span>
+                                </div>
+                                <div class="md:text-right md:mr-8 md:hidden">
+                                    <h3 class="text-2xl font-bold text-photo-charcoal">관광 가이드</h3>
+                                    <h4 class="text-xl text-photo-sky">하나투어, 모두투어, 노랑풍선</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-2/3 md:pl-8">
+                            <div class="hidden md:block mb-4">
+                                <h3 class="text-2xl font-bold text-photo-charcoal">관광 가이드</h3>
+                                <h4 class="text-xl text-photo-sky">하나투어, 모두투어, 노랑풍선</h4>
+                            </div>
+                            <div class="bg-photo-sky/5 p-6 rounded-xl">
+                                <p class="text-gray-700 mb-4">
+                                    영어 및 한국어를 사용하는 국제 관광객들을 대상으로 전문적인 가이드 서비스를 제공했습니다. 
+                                    문화 간 이해를 증진시키고, 관광객들에게 풍부한 현지 경험을 제공했습니다.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">관광 통역</span>
+                                    <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">문화 해설</span>
+                                    <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">고객 서비스</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Item 3 -->
+                    <div class="relative flex flex-col md:flex-row">
+                        <div class="md:w-1/3 mb-4 md:mb-0">
+                            <div class="flex items-center md:justify-end">
+                                <div class="w-16 h-16 bg-photo-sky rounded-full flex items-center justify-center text-white font-bold md:mr-8 mr-4 shrink-0 relative z-10">
+                                    <span>2017</span>
+                                </div>
+                                <div class="md:text-right md:mr-8 md:hidden">
+                                    <h3 class="text-2xl font-bold text-photo-charcoal">사원</h3>
+                                    <h4 class="text-xl text-photo-sky">3E Holdings Viet Nam</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-2/3 md:pl-8">
+                            <div class="hidden md:block mb-4">
+                                <h3 class="text-2xl font-bold text-photo-charcoal">사원</h3>
+                                <h4 class="text-xl text-photo-sky">3E Holdings Viet Nam</h4>
+                            </div>
+                            <div class="bg-photo-sky/5 p-6 rounded-xl">
+                                <p class="text-gray-700 mb-4">
+                                    싱가포르-베트남 현지 파트너사와의 협력 관계를 구축하고 유지했습니다. 
+                                    데이터 분석을 통해 잠재적 파트너를 발굴하고, 영-베 문서 번역 및 통역 업무를 수행했습니다.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">비즈니스 번역</span>
+                                    <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">파트너십 관리</span>
+                                    <span class="bg-photo-sky/10 text-photo-charcoal px-3 py-1 rounded-full text-sm">데이터 분석</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-photo-sky/5 rounded-l-full transform translate-x-1/2"></div>
+        
+        <div class="p-8 md:p-12 relative">
+            <div class="flex items-center mb-12">
+                <div class="h-1 w-16 bg-photo-sky mr-4"></div>
+                <h2 class="text-4xl font-bold text-photo-charcoal">Let's Connect</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Left side - Contact Info -->
+                <div>
+                    <p class="text-lg text-gray-700 mb-8">
+                        I'm always interested in new opportunities and collaborations. Feel free to reach out through any of the channels below.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center group">
+                            <div class="w-12 h-12 rounded-xl bg-photo-sky/10 group-hover:bg-photo-sky flex items-center justify-center mr-4 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Email</div>
+                                <a href="mailto:nhipham.zeny@gmail.com" class="text-photo-charcoal font-medium hover:text-photo-sky transition-colors">
+                                    nhipham.zeny@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center group">
+                            <div class="w-12 h-12 rounded-xl bg-photo-sky/10 group-hover:bg-photo-sky flex items-center justify-center mr-4 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Phone</div>
+                                <a href="tel:+82-10-9806-6466" class="text-photo-charcoal font-medium hover:text-photo-sky transition-colors">
+                                    +82 10-9806-6466
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center group">
+                            <div class="w-12 h-12 rounded-xl bg-photo-sky/10 group-hover:bg-photo-sky flex items-center justify-center mr-4 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-photo-sky group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Location</div>
+                                <span class="text-photo-charcoal font-medium">Seoul, South Korea</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <h3 class="text-xl font-bold text-photo-charcoal mb-4">Connect with me</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl bg-photo-sky/10 hover:bg-photo-sky flex items-center justify-center text-photo-sky hover:text-white transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl bg-photo-sky/10 hover:bg-photo-sky flex items-center justify-center text-photo-sky hover:text-white transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl bg-photo-sky/10 hover:bg-photo-sky flex items-center justify-center text-photo-sky hover:text-white transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side - Contact Form -->
+                <div class="bg-photo-sky/5 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-photo-charcoal mb-6">Send me a message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-photo-sky focus:border-transparent outline-none transition-all" placeholder="Your name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-photo-sky focus:border-transparent outline-none transition-all" placeholder="your@email.com">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-photo-sky focus:border-transparent outline-none transition-all" placeholder="Your message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-photo-sky text-white py-3 px-6 rounded-lg hover:bg-photo-charcoal transition-colors font-medium">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-5xl mx-auto text-center p-8 text-gray-500">
+        <p>© 2024 Pham Thi Nhi. All rights reserved.</p>
+    </footer>
+
+    <!-- Smooth scroll script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
