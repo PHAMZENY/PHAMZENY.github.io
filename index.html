@@ -1,371 +1,480 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhi - Professional Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        photo: {
-                            sky: '#7da3d1',
-                            stone: '#d2d2d2',
-                            charcoal: '#4a4a4a',
-                            building: '#f5f5f5'
-                        },
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="CMED - Chuyên gia OEM/ODM/OBM trong lĩnh vực làm đẹp. Cung cấp giải pháp toàn diện cho ngành mỹ phẩm và thiết bị làm đẹp." />
+  <meta name="keywords" content="CMED, OEM, ODM, OBM, mỹ phẩm, làm đẹp, Hàn Quốc, chăm sóc da" />
+  <title>CMED - Chuyên gia OEM/ODM/OBM trong lĩnh vực làm đẹp</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="CMED - Chuyên gia OEM/ODM/OBM trong lĩnh vực làm đẹp">
+  <meta property="og:description" content="Cung cấp giải pháp toàn diện cho ngành mỹ phẩm và thiết bị làm đẹp với công nghệ tiên tiến">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:url" content="https://cmed.com.vn">
 </head>
-<body class="bg-white min-h-screen p-4">
-    <!-- Hero Section -->
-    <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
-        <!-- Decorative circles -->
-        <div class="absolute top-1/2 left-3/4 w-24 h-24 rounded-full bg-photo-stone/30"></div>
-        <div class="absolute bottom-10 left-10 w-16 h-16 rounded-full bg-photo-stone/30"></div>
-        <div class="absolute top-20 right-10 w-20 h-20 rounded-full bg-photo-sky/20"></div>
-        
-        <div class="flex flex-col md:flex-row">
-            <!-- Left section with image and curved border -->
-            <div class="relative w-full md:w-1/2">
-                <!-- Curved border -->
-                <div class="hidden md:block absolute top-0 right-0 bottom-0 w-24 bg-white z-10">
-                    <div class="absolute top-0 right-0 bottom-0 left-0 bg-photo-charcoal rounded-l-full"></div>
-                </div>
-                
-                <!-- Image container with circular crop -->
-                <div class="relative h-full">
-                    <div class="md:absolute inset-0 m-6 md:m-10 rounded-full overflow-hidden border-8 border-white shadow-lg">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-90mphZn4ZPADa3RQR4IxGfDZ7r7ZIP.png" alt="Nhi at a modern architectural building" class="w-full h-full object-cover" />
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Right section with text content -->
-            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                <h1 class="text-5xl md:text-6xl font-bold text-photo-charcoal mb-4">Portfolio</h1>
-                
-                <h2 class="text-4xl font-bold text-photo-charcoal mt-6 mb-4">PHAM THI NHI</h2>
-                
-                <div class="inline-block bg-photo-sky text-white px-6 py-2 rounded-full text-lg font-medium mb-6">
-                    ABOUT ME
-                </div>
-                
-                <p class="text-gray-700 leading-relaxed mb-8">
-                    안녕하세요! 저는 <strong>팜티니</strong>입니다. 한국어 교사이자 통역사로서, 베트남과 한국 문화를 잇는 열정적인 다리 역할을 하고 있습니다.
-                    저는 다낭 외국어대학교에서 영어 통번역 학사 학위와 숭실대학교에서 한국어문학 석사 학위를 취득하였습니다. 한국어 능력시험(TOPIK) 6급, 영어 CEFR C1 수준, 베트남어는 모국어이며, 중국어는 HSK 4급(중급 수준)을 보유하고 있습니다. 그동안 회화 수업부터 TOPIK/KIIP 시험 대비까지 다양한 한국어 교육 경험은 물론, 통역 및 국제 관광 가이드로서도 폭넓은 경력을 쌓아왔습니다.
-                </p>
-            </div>
-        </div>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="#">Đăng nhập</a>
+        <a href="#">VN</a>
+        <a href="#">EN</a>
+      </div>
     </div>
+    <nav>
+      <div class="logo">CMED</div>
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#services">Dịch vụ</a>
+        <a href="#products">Sản phẩm</a>
+        <a href="#news">Tin tức</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Education Section -->
-    <section id="education" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
-        <!-- Decorative elements similar to the splatter in the reference image -->
-        <div class="absolute top-0 right-0 w-96 h-96">
-            <div class="absolute top-10 right-10 w-2 h-2 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-20 right-20 w-3 h-3 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-15 right-40 w-1 h-1 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-30 right-60 w-2 h-2 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-40 right-20 w-1 h-1 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-50 right-80 w-3 h-3 rounded-full bg-photo-sky"></div>
-            <div class="absolute top-60 right-30 w-2 h-2 rounded-full bg-photo-sky"></div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Đối tác OEM/ODM/OBM Toàn Cầu</h1>
+      <p>Chúng tôi cung cấp giải pháp toàn diện cho ngành mỹ phẩm và thiết bị làm đẹp với công nghệ tiên tiến và chất lượng đẳng cấp quốc tế.</p>
+      <div class="cta-buttons">
+        <button class="cta-button primary-cta">Tìm hiểu thêm</button>
+        <button class="cta-button secondary-cta">Liên hệ ngay</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-container">
+    <div class="section-title">
+      <h2>Về CMED</h2>
+      <p>CMED là doanh nghiệp hàng đầu trong lĩnh vực sản xuất mỹ phẩm theo hình thức OEM, ODM và OBM, với chứng nhận ISO và các giải pháp tùy chỉnh đáp ứng nhu cầu đa dạng của khách hàng.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Dịch vụ của chúng tôi</h2>
+        <p>Cung cấp giải pháp toàn diện từ nghiên cứu phát triển đến sản xuất</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-industry service-icon"></i>
+          <h3>OEM/ODM/OBM</h3>
+          <p>Phát triển và sản xuất sản phẩm theo yêu cầu của khách hàng với công nghệ tiên tiến.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-flask service-icon"></i>
+          <h3>Nghiên cứu & Phát triển</h3>
+          <p>Đội ngũ R&D sáng tạo, không ngừng cập nhật xu hướng mới nhất trong ngành.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-certificate service-icon"></i>
+          <h3>Chứng nhận & Tiêu chuẩn</h3>
+          <p>Đáp ứng các tiêu chuẩn quốc tế như ISO 9001, ISO 22716 và các quy định nghiêm ngặt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skincare" class="products">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Chăm Sóc Da</h2>
+        <h3 class="subtitle">Dưỡng Ẩm Thiết Yếu Cho Làn Da Rạng Rỡ và Khỏe Mạnh</h3>
+        <p>Giải pháp chăm sóc da toàn diện cho làn da tươi trẻ</p>
+      </div>
+
+      <!-- DAILY SKIN CARE -->
+      <div class="product-category">
+        <h3 class="category-title">CHĂM SÓC DA HÀNG NGÀY (CHO MỌI LOẠI DA)</h3>
+        <div class="product-grid">
+          <!-- GTM MILK CLEANSING -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/milk-cleansing.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM MILK CLEANSING</h3>
+              <div class="product-specs">500ml ℮</div>
+              <div class="product-description">
+                <p>Sữa rửa mặt dạng sữa nhẹ nhàng làm sạch lớp trang điểm và bụi bẩn, giữ ẩm cho da sau khi rửa mặt, mang lại làn da mềm mại và tươi sáng.</p>
+              </div>
+              <div class="product-price">₩61,000/$42</div>
+            </div>
+          </div>
+
+          <!-- GTM ROSE HERB TONER -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/rose-toner.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM ROSE HERB TONER</h3>
+              <div class="product-specs">500ml℮</div>
+              <div class="product-description">
+                <p>Nước hoa hồng chứa chiết xuất hoa hồng Centifolia giúp tạo màng bảo vệ độ ẩm và điều chỉnh kết cấu da.</p>
+              </div>
+              <div class="product-price">₩61,000/$42</div>
+            </div>
+          </div>
+
+          <!-- GTM ALOE SOOTHING GEL -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/aloe-gel.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM ALOE SOOTHING GEL</h3>
+              <div class="product-specs">500ml ℮</div>
+              <div class="product-description">
+                <p>Aloe vera leaf extract giúp cung cấp độ ẩm và dưỡng chỉnh da khô và nhạy cảm.</p>
+              </div>
+              <div class="product-price">₩51,000/$35</div>
+            </div>
+          </div>
+
+          <!-- GTM CLEANSING GEL -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/cleansing-gel.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM CLEANSING GEL</h3>
+              <div class="product-specs">500ml ℮</div>
+              <div class="product-description">
+                <p>Gel rửa mặt dịu nhẹ với độ pH cân bằng, phù hợp cho da nhạy cảm với công thức gel mềm mại.</p>
+              </div>
+              <div class="product-price">₩61,000/$42</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BALANCE SKIN CARE SET -->
+      <div class="product-category">
+        <h3 class="category-title">BỘ CHĂM SÓC DA CÂN BẰNG (CHO DA MỤN)</h3>
+        <div class="product-grid">
+          <!-- GTM BALANCE CLEANSING GEL -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/balance-cleansing.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM BALANCE CLEANSING GEL</h3>
+              <div class="product-specs">150ml ℮, 500ml ℮</div>
+              <div class="product-description">
+                <p>Gel rửa mặt dịu nhẹ với độ pH cân bằng, phù hợp cho da nhạy cảm với công thức gel mềm mại.</p>
+              </div>
+              <div class="product-price">₩64,000/$44</div>
+            </div>
+          </div>
+
+          <!-- GTM BALANCE CONTROL TONER -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/balance-toner.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM BALANCE CONTROL TONER</h3>
+              <div class="product-specs">150ml℮, 500ml ℮</div>
+              <div class="product-description">
+                <p>Toner cân bằng độ pH, giúp làm dịu da và cung cấp độ ẩm cho da.</p>
+              </div>
+              <div class="product-price">₩59,000/$41</div>
+            </div>
+          </div>
+
+          <!-- GTM BALANCE MOISTURE CREAM -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/balance-cream.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM BALANCE MOISTURE CREAM</h3>
+              <div class="product-specs">150ml℮, 500ml℮</div>
+              <div class="product-description">
+                <p>Cream dưỡng ẩm cuối cùng trong chăm sóc da, giúp làm dịu và cung cấp độ ẩm cho da nhạy cảm và kích ứng.</p>
+              </div>
+              <div class="product-price">₩94,940/$66</div>
+            </div>
+          </div>
+
+          <!-- GTM BALANCE CONTROL SERUM -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/balance-serum.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM BALANCE CONTROL SERUM</h3>
+              <div class="product-specs"></div>
+              <div class="product-description">
+                <p>Serum cân bằng độ pH, giúp làm dịu và cung cấp độ ẩm cho da.</p>
+              </div>
+              <div class="product-price">₩62,700/$43</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER CARE -->
+      <div class="product-category">
+        <h3 class="category-title">CHĂM SÓC SAU ĐIỀU TRỊ</h3>
+        <div class="product-grid">
+          <!-- GTM VITA K REPAIR CREAM -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/vita-k-cream.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM VITA K REPAIR CREAM</h3>
+              <div class="product-specs">30ml℮</div>
+              <div class="product-description">
+                <p>Cream chống lão hóa Vitamin K, giúp làm dịu và cung cấp độ ẩm cho da.</p>
+              </div>
+              <div class="product-price">₩23,100/$16</div>
+            </div>
+          </div>
+
+          <!-- GTM VITA K REPAIR MASK -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/vita-k-mask.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM VITA K REPAIR MASK</h3>
+              <div class="product-specs">30ml℮ x 10ea</div>
+              <div class="product-description">
+                <p>Mặt nạ không thấm nước, giúp làm dịu và cung cấp độ ẩm cho da.</p>
+              </div>
+              <div class="product-price">₩72,600/$50</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUNCARE -->
+      <div class="product-category">
+        <h3 class="category-title">CHỐNG NẮNG</h3>
+        <div class="product-grid">
+          <!-- GTM ACTIVE PROTECTION SUN SERUM -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('path/to/sun-serum.jpg')"></div>
+            <div class="product-content">
+              <h3>GTM ACTIVE PROTECTION SUN SERUM</h3>
+              <div class="product-specs">SPF 50+ PA++++ / 50ml ℮</div>
+              <div class="product-description">
+                <p>Serum chống nắng mang lại cảm giác tươi mát và dễ dàng thoa đều không gây vón cục. Cung cấp khả năng bảo vệ UV cao, lâu trôi và công thức giúp cải thiện tông màu da tự nhiên cho làn da sáng hơn. Với khả năng thẩm thấu nhanh và không nhờn rít, mang lại trải nghiệm sạch, tươi mới mà không để lại vệt trắng.</p>
+              </div>
+              <div class="product-price">₩21,000/$15</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        /* Product Category Specific Styles */
+        .product-category {
+          margin-bottom: 60px;
+        }
+
+        .category-title {
+          color: var(--text-dark);
+          font-size: 1.5em;
+          margin-bottom: 30px;
+          padding-bottom: 10px;
+          border-bottom: 2px solid var(--primary-color);
+        }
+
+        /* Update existing product card styles */
+        .product-card {
+          display: flex;
+          flex-direction: column;
+          background: white;
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease;
+          margin-bottom: 30px;
+        }
+
+        .product-image {
+          height: 300px;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: #f8f8f8;
+          padding: 20px;
+        }
+
+        .product-content {
+          padding: 25px;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .product-specs {
+          color: var(--primary-color);
+          font-weight: 500;
+          margin: 10px 0;
+        }
+
+        .product-description {
+          margin: 15px 0;
+          flex-grow: 1;
+        }
+
+        .en-description {
+          color: var(--text-light);
+          font-size: 0.95em;
+          margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+          .category-title {
+            font-size: 1.3em;
+          }
+
+          .product-image {
+            height: 200px;
+          }
+        }
+      </style>
+    </div>
+  </section>
+
+  <section id="professional-care" class="products">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Chăm Sóc Chuyên Nghiệp</h2>
+        <p>Giải pháp chăm sóc da chuyên sâu với công nghệ tiên tiến</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- GTM CO2 TOCTOC THERAPY -->
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('path/to/co2-therapy.jpg')"></div>
+          <div class="product-content">
+            <h3>GTM CO2 TOCTOC THERAPY</h3>
+            <div class="product-specs">
+              <ul>
+                <li>GTM CO2 TocToc Therapy 20ml*5 gói</li>
+                <li>GTM CO2 TocToc Synergy Ampoule 5ml*5 lọ</li>
+                <li>GTM CO2 TocToc Mask Sheet+Neck sheet 5 miếng</li>
+              </ul>
+            </div>
+            <div class="product-description">
+              <p>Liệu pháp mặt nạ CO2, cung cấp độ ẩm, làm dịu da, cải thiện nếp nhăn, làm trắng, nâng cơ và tái tạo da.</p>
+            </div>
+            <div class="product-price">₩213,000/$147</div>
+          </div>
         </div>
 
-        <!-- Education Header -->
-        <div class="p-8">
-            <h2 class="text-4xl font-bold text-photo-charcoal mb-12">EDUCATION</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <!-- Left side - Image -->
-                <div class="rounded-lg overflow-hidden">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Education environment" class="w-full h-full object-cover" />
-                </div>
-
-                <!-- Right side - Education details -->
-                <div class="space-y-10">
-                    <!-- First education entry -->
-                    <div>
-                        <h3 class="text-2xl font-bold text-photo-sky mb-4">숭실대학교-일반대학원-국어국문</h3>
-                        <p class="text-photo-charcoal text-base text-justify">
-                            국어국문학과 석사 학위. 한국어 언어학 및 문화 연구 전공. '베트남 한국어 학습자의 외래어 의미 인식 양상 연구 - 영어에서 온 의미 변화 외래어를 중심으로-'주제로 논문 완료. 학업期间 TOPIK 6급(최고급) 취득. 문화 교류 프로그램 및 학술 회의 참여.
-                        </p>
-                    </div>
-
-                    <!-- Second education entry -->
-                    <div>
-                        <h3 class="text-2xl font-bold text-photo-sky mb-4">다낭 외국어대학교-영어 통번역</h3>
-                        <p class="text-photo-charcoal text-base text-justify">
-                            영어 통번역 학사 학위. 통번역 및 크로스컬쳐 커뮤니케이션 분야의 전공 수료. 다양한 언어 교환 활동 및 적극적인 교외 활동 참여. 영어 CEFR C1 수준 취득. 
-                        </p>
-                    </div>
-                </div>
+        <!-- GTM T-TOX-PEEL PROFESSIONAL -->
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('path/to/t-tox-peel.jpg')"></div>
+          <div class="product-content">
+            <h3>GTM T-TOX-PEEL PROFESSIONAL</h3>
+            <div class="product-specs">
+              <ul>
+                <li>T-TOX Powder 1g*6 lọ</li>
+                <li>T-TOX Solution 10ml*6 lọ</li>
+              </ul>
             </div>
+            <div class="product-description">
+              <p>Tẩy tế bào chết tự nhiên giúp chăm sóc và làm sạch da, tạo nên làn da mịn màng và săn chắc.</p>
+            </div>
+            <div class="product-price">₩184,000/$127</div>
+          </div>
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16 p-8">
-        <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-photo-sky/10"></div>
-        
-        <h2 class="text-4xl font-bold text-photo-charcoal mb-8">역량 및 전문성</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Left side - Image -->
-            <div class="rounded-lg overflow-hidden mb-8 md:mb-0">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Nx6GSE87wTFHEYXlgeGZkTpYw479yu.png" alt="Skills visualization" class="w-full h-auto object-cover" />
+        <!-- GTM CALMING SHOT 3600 MTS ROLLER SET -->
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('path/to/calming-shot.jpg')"></div>
+          <div class="product-content">
+            <h3>GTM CALMING SHOT 3600 MTS ROLLER SET</h3>
+            <div class="product-specs">
+              <ul>
+                <li>GTM CALMING SHOT 3600 MTS ampoule 3.3ml×1</li>
+                <li>GTM CALMING SHOT 3600 MTS roller ×2</li>
+                <li>GTM CALMING SHOT 3600 MTS roller handle ×1</li>
+              </ul>
             </div>
-            
-            <!-- Language Skills -->
-            <div>
-                <h3 class="text-2xl font-bold text-photo-sky mb-6">어학 능력</h3>
-                
-                <div class="space-y-4">
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium text-photo-charcoal">베트남어</span>
-                            <span class="text-photo-sky">원어민</span>
-                        </div>
-                        <div class="w-full bg-photo-stone/30 rounded-full h-2">
-                            <div class="bg-photo-sky h-2 rounded-full" style="width: 100%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium text-photo-charcoal">한국어</span>
-                            <span class="text-photo-sky">고급 (TOPIK 6)</span>
-                        </div>
-                        <div class="w-full bg-photo-stone/30 rounded-full h-2">
-                            <div class="bg-photo-sky h-2 rounded-full" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium text-photo-charcoal">영어</span>
-                            <span class="text-photo-sky">고급 (C1)</span>
-                        </div>
-                        <div class="w-full bg-photo-stone/30 rounded-full h-2">
-                            <div class="bg-photo-sky h-2 rounded-full" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium text-photo-charcoal">중국어</span>
-                            <span class="text-photo-sky">중급 (HSK 4)</span>
-                        </div>
-                        <div class="w-full bg-photo-stone/30 rounded-full h-2">
-                            <div class="bg-photo-sky h-2 rounded-full" style="width: 70%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <h3 class="text-2xl font-bold text-photo-sky mb-4 mt-8">소프트웨어 및 사무 기술</h3>
-                <div class="flex gap-6 mb-6">
-                    <div class="bg-photo-stone/10 p-4 rounded-lg flex flex-col items-center">
-                        <div class="w-16 h-16 bg-photo-sky/20 rounded-lg flex items-center justify-center mb-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-photo-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                        </div>
-                        <span class="text-photo-charcoal font-medium">MS Office</span>
-                    </div>
-                    
-                    <div class="bg-photo-stone/10 p-4 rounded-lg flex flex-col items-center">
-                        <div class="w-16 h-16 bg-photo-sky/20 rounded-lg flex items-center justify-center mb-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-photo-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                            </svg>
-                        </div>
-                        <span class="text-photo-charcoal font-medium">Google Drive</span>
-                    </div>
-
-                    <div class="bg-photo-stone/10 p-4 rounded-lg flex flex-col items-center">
-                        <div class="w-16 h-16 bg-photo-sky/20 rounded-lg flex items-center justify-center mb-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-photo-charcoal" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M11.93 2c-5.5 0-5.7 2.43-5.7 2.43v2.62H12v.67H4.38c-2.5 0-4.7 1.5-4.7 4.25 0 2.8 2.2 4.3 4.7 4.3h2.12v-2.13c0-2.1 1.8-3.88 3.87-3.88h6.37c1.7 0 3.13-1.4 3.13-3.12V4.43S22.12 2 11.93 2zM8.56 4.12c.63 0 1.13.5 1.13 1.13s-.5 1.12-1.13 1.12c-.6 0-1.12-.5-1.12-.12s.5-1.13 1.12-1.13z"/>
-                                <path fill="currentColor" d="M12.07 22c5.5 0 5.7-2.43 5.7-2.43v-2.62H12v-.67h7.62c2.5 0 4.7-1.5 4.7-4.25 0-2.8-2.2-4.3-4.7-4.3h-2.12v2.13c0 2.1-1.8 3.88-3.87 3.88H5.26C3.56 13.74 2.13 15.14 2.13 16.86v3.75S1.93 22 12.07 22zm3.37-2.12c-.63 0-1.13-.5-1.13-1.13s.5-1.12 1.13-1.12c.6 0 1.12.5 1.12 1.12s-.5 1.13-1.12 1.13z"/>
-                            </svg>
-                        </div>
-                        <span class="text-photo-charcoal font-medium">Python</span>
-                    </div>
-                </div>
+            <div class="product-description">
+              <p>Bộ lăn MTS giúp da hấp thụ các thành phần hoạt tính để nhanh chóng giải quyết các vấn đề về da như mất nước và lỗ chân lông to. Khi sử dụng cùng với Calming Shot Ampoule, nó giúp cải thiện nếp nhăn và độ đàn hồi, cung cấp độ ẩm và làm dịu da nhạy cảm với Madecassoside. Cho phép bạn chăm sóc da tại nhà như một chuyên gia.</p>
             </div>
+            <div class="product-price">₩88,000/$61</div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
-        <div class="absolute bottom-0 right-0 w-40 h-40 rounded-tl-full bg-photo-stone/20"></div>
-        
-        <div class="p-8">
-            <h2 class="text-4xl font-bold text-photo-charcoal mb-8">Experience</h2>
-            
-            <div class="space-y-8">
-                <!-- Experience Item 1 -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="md:w-1/3">
-                        <div class="bg-photo-sky text-white p-4 rounded-lg">
-                            <div class="text-xl font-bold">2022 - 현재</div>
-                            <div class="text-white/80"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="md:w-2/3">
-                        <h3 class="text-2xl font-bold text-photo-charcoal">한국어 강사</h3>
-                        <h4 class="text-xl text-photo-sky mb-3">한국어 학원</h4>
-                        <p class="text-gray-700 mb-4">
-                            교안을 작성, 
-                            온라인 수업을 진행 및 관리
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-photo-stone/30 text-photo-charcoal px-3 py-1 rounded-full text-sm">한국어 교육</span>
-                            <span class="bg-photo-stone/30 text-photo-charcoal px-3 py-1 rounded-full text-sm">커리큘럼 개발</span>
-                            <span class="bg-photo-stone/30 text-photo-charcoal px-3 py-1 rounded-full text-sm">학습자 맞춤 지도</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experience Item 2 -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="md:w-1/3">
-                        <div class="bg-photo-sky text-white p-4 rounded-lg">
-                            <div class="text-xl font-bold">2018 - 2020</div>
-                            <div class="text-white/80"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="md:w-2/3">
-                        <h3 class="text-2xl font-bold text-photo-charcoal">관광 가이드</h3>
-                        <h4 class="text-xl text-photo-sky mb-3">하나투어, 모두투어, 노랑풍선 투어.</h4>
-                        <p class="text-gray-700 mb-4">
-                            영어 및 한국어를 사용하는 국제 관광객들을 대상으로 여행 가이드 역할 수행.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-photo-stone/30 text-photo-charcoal px-3 py-1 rounded-full text-sm">관광 통역</span>
-                            <span class="bg-photo-stone/30 text-photo-charcoal px-3 py-1 rounded-full text-sm">외국인 응대, 고객 서비스</span>
-                            <span class="bg-photo-stone/30 text-photo-charcoal px-3 py-1 rounded-full text-sm">문화 해설</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Experience Item 3 -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="md:w-1/3">
-                        <div class="bg-photo-sky text-white p-4 rounded-lg">
-                            <div class="text-xl font-bold">2017 - 2018</div>
-                            <div class="text-white/80"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="md:w-2/3">
-                        <h3 class="text-2xl font-bold text-photo-charcoal">사원</h3>
-                        <h4 class="text-xl text-photo-sky mb-3">3E Holdings Viet Nam</h4>
-                        <p class="text-gray-700 mb-4">
-                            싱가포르-베트남 현지 파트너사와의 협력 관계 구축 및 유지 관리.
-                             잠재적 파트너 발굴 및 협력 검토를 위한 데이터 분석.
-                             영-베 문서 번역 (번역/통역) 및 기타 사무 지원 업무 수행
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-photo-stone/30 text-photo-charcoal px-3 py-1 rounded-full text-sm">비즈니스 번역</span>
-                            <span class="bg-photo-stone/30 text-photo-charcoal px-3 py-1 rounded-full text-sm">문서 작성 및 관리</span>
-                            <span class="bg-photo-stone/30 text-photo-charcoal px-3 py-1 rounded-full text-sm">행정 업무 지원</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section id="news">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Tin Tức & Sự Kiện</h2>
+        <p>Cập nhật những thông tin mới nhất về CMED</p>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1557425955-df376b5903c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')"></div>
+          <div class="news-content">
+            <div class="news-date">15 Tháng 3, 2024</div>
+            <h3>CMED ký kết hợp tác phân phối tại Việt Nam</h3>
+            <p>Chúng tôi tự hào thông báo về việc ký kết hợp tác phân phối sản phẩm tại thị trường Việt Nam.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden relative mb-16">
-        <div class="p-8 bg-photo-sky/10">
-            <h2 class="text-4xl font-bold text-photo-charcoal mb-6">Get In Touch</h2>
-            <p class="text-gray-700 mb-6">
-                Interested in working together? Feel free to reach out through any of the channels below.
-            </p>
-            
-            <div class="space-y-4">
-                <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-photo-sky flex items-center justify-center mr-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="text-sm text-photo-charcoal/70">Email</div>
-                        <div class="text-photo-charcoal font-medium">nhipham.zeny@gmail.com</div>
-                    </div>
-                </div>
-                
-                <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-photo-sky flex items-center justify-center mr-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="text-sm text-photo-charcoal/70">Phone</div>
-                        <div class="text-photo-charcoal font-medium">010-9806-6466</div>
-                    </div>
-                </div>
-                
-                <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-photo-sky flex items-center justify-center mr-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="text-sm text-photo-charcoal/70">Location</div>
-                        <div class="text-photo-charcoal font-medium">Seoul, South Korea</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-8 flex space-x-4">
-                <a href="#" class="w-10 h-10 rounded-full bg-photo-charcoal flex items-center justify-center text-white hover:bg-photo-sky transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-photo-charcoal flex items-center justify-center text-white hover:bg-photo-sky transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-photo-charcoal flex items-center justify-center text-white hover:bg-photo-sky transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                    </svg>
-                </a>
-            </div>
+        <div class="news-card">
+          <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')"></div>
+          <div class="news-content">
+            <div class="news-date">10 Tháng 3, 2024</div>
+            <h3>Hội chợ KIMES 2024</h3>
+            <p>CMED sẽ tham gia triển lãm KIMES 2024 tại Seoul, Hàn Quốc.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="max-w-5xl mx-auto text-center p-8 text-photo-charcoal/70">
-        <p>© 2023 Nhi. All rights reserved.</p>
-    </footer>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Về CMED</h3>
+        <ul class="footer-links">
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tầm nhìn & Sứ mệnh</a></li>
+          <li><a href="#">Đội ngũ</a></li>
+          <li><a href="#">Chứng nhận</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Dịch vụ</h3>
+        <ul class="footer-links">
+          <li><a href="#">OEM/ODM/OBM</a></li>
+          <li><a href="#">R&D</a></li>
+          <li><a href="#">Sản xuất</a></li>
+          <li><a href="#">Tư vấn</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>Tầng 5, 101 Ogeum-ro, Songpa-gu,<br>Seoul, Hàn Quốc</p>
+        <p>Email: cmedemi@naver.com</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/PHAMZENY" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100007674820066" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 CMED Co., Ltd. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- Smooth scroll script -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
