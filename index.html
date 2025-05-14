@@ -4,168 +4,533 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CMED - Chuyên gia OEM/ODM/OBM trong lĩnh vực làm đẹp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    :root {
+      --primary-color: #e31837;
+      --secondary-color: #333;
+      --background-light: #f8f9fa;
+      --text-dark: #222;
+      --text-light: #666;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Noto Sans KR', sans-serif;
       line-height: 1.6;
+      color: var(--text-dark);
     }
+
+    /* Header Styles */
     header {
       background-color: #fff;
-      border-bottom: 1px solid #ddd;
-      padding: 10px 20px;
-      position: sticky;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
       top: 0;
       z-index: 1000;
     }
+
+    .top-bar {
+      background-color: var(--secondary-color);
+      padding: 5px 0;
+      color: #fff;
+      font-size: 0.9em;
+    }
+
+    .top-bar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 20px;
+    }
+
+    .top-bar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.85em;
+    }
+
     nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: var(--primary-color);
     }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
     .hero {
-      background: url('banner.jpg') center/cover no-repeat;
+      margin-top: 80px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1629198688000-71f23e745b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 100px 20px;
+      padding: 180px 20px;
+      position: relative;
     }
+
     .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.4em;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      font-weight: 300;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .cta-button {
+      padding: 15px 40px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .primary-cta {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .secondary-cta {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 80px 20px;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
       font-size: 2.5em;
+      color: var(--text-dark);
       margin-bottom: 20px;
     }
-    .hero p {
+
+    .section-title p {
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 2.5em;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: var(--text-dark);
+    }
+
+    .service-card p {
+      color: var(--text-light);
+    }
+
+    /* Products Section */
+    .products {
+      background-color: var(--background-light);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .product-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product-content h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    /* News Section */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .news-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .news-content {
+      padding: 20px;
+    }
+
+    .news-date {
+      color: var(--text-light);
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: #fff;
+      padding: 60px 0 30px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 20px;
       font-size: 1.2em;
     }
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
+
+    .footer-links {
+      list-style: none;
     }
-    section h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #333;
-    }
-    .services, .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-    }
-    .service, .product {
-      flex: 1 1 250px;
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-    }
-    .service h3, .product h3 {
-      margin-bottom: 10px;
-      color: #555;
-    }
-    .news {
-      background: #f0f0f0;
-      padding: 40px 20px;
-    }
-    .news h3 {
+
+    .footer-links li {
       margin-bottom: 10px;
     }
-    footer {
-      background: #222;
+
+    .footer-links a {
       color: #fff;
-      text-align: center;
-      padding: 30px 20px;
+      text-decoration: none;
+      transition: color 0.3s;
     }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      color: #fff;
+      font-size: 1.5em;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.9em;
+    }
+
     @media (max-width: 768px) {
-      .services, .products {
-        flex-direction: column;
-        align-items: center;
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1.1em;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-title h2 {
+        font-size: 2em;
       }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <nav>
-    <div><strong>CMED</strong></div>
-    <div>
-      <a href="#">Giới thiệu</a>
-      <a href="#">Dịch vụ</a>
-      <a href="#">Sản phẩm</a>
-      <a href="#">Tin tức</a>
-      <a href="#">Liên hệ</a>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="#">Login</a>
+        <a href="#">VN</a>
+        <a href="#">EN</a>
+      </div>
     </div>
-  </nav>
-</header>
+    <nav>
+      <div class="logo">CMED</div>
+      <div class="nav-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#services">Dịch vụ</a>
+        <a href="#products">Sản phẩm</a>
+        <a href="#news">Tin tức</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+    </nav>
+  </header>
 
-<section class="hero">
-  <h1>Đối tác OEM/ODM/OBM Toàn Cầu</h1>
-  <p>Chúng tôi cung cấp giải pháp toàn diện cho ngành mỹ phẩm và thiết bị làm đẹp.</p>
-</section>
-
-<section>
-  <h2>Về CMED</h2>
-  <p>CMED là doanh nghiệp hàng đầu trong lĩnh vực sản xuất mỹ phẩm theo hình thức OEM, ODM và OBM, đạt chuẩn ISO và cung cấp các giải pháp tùy chỉnh phù hợp với nhu cầu của khách hàng.</p>
-</section>
-
-<section>
-  <h2>Dịch vụ của chúng tôi</h2>
-  <div class="services">
-    <div class="service">
-      <h3>OEM/ODM/OBM</h3>
-      <p>Phát triển và sản xuất sản phẩm theo yêu cầu của khách hàng.</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Đối tác OEM/ODM/OBM Toàn Cầu</h1>
+      <p>Chúng tôi cung cấp giải pháp toàn diện cho ngành mỹ phẩm và thiết bị làm đẹp với công nghệ tiên tiến và chất lượng đẳng cấp quốc tế.</p>
+      <div class="cta-buttons">
+        <button class="cta-button primary-cta">Tìm hiểu thêm</button>
+        <button class="cta-button secondary-cta">Liên hệ ngay</button>
+      </div>
     </div>
-    <div class="service">
-      <h3>Nghiên cứu & Phát triển</h3>
-      <p>Đội ngũ R&D sáng tạo, cập nhật xu hướng mới nhất.</p>
-    </div>
-    <div class="service">
-      <h3>Chứng nhận & Tiêu chuẩn</h3>
-      <p>Đáp ứng các tiêu chuẩn quốc tế như ISO 9001, ISO 22716.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>Sản phẩm nổi bật</h2>
-  <div class="products">
-    <div class="product">
-      <h3>Skin Booster</h3>
-      <p>Sản phẩm tăng cường dưỡng chất cho da, giúp da khỏe mạnh và rạng rỡ.</p>
+  <section id="about" class="section-container">
+    <div class="section-title">
+      <h2>Về CMED</h2>
+      <p>CMED là doanh nghiệp hàng đầu trong lĩnh vực sản xuất mỹ phẩm theo hình thức OEM, ODM và OBM, với chứng nhận ISO và các giải pháp tùy chỉnh đáp ứng nhu cầu đa dạng của khách hàng.</p>
     </div>
-    <div class="product">
-      <h3>Chăm sóc da</h3>
-      <p>Dòng sản phẩm chăm sóc da toàn diện, phù hợp với mọi loại da.</p>
+  </section>
+
+  <section id="services">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Dịch vụ của chúng tôi</h2>
+        <p>Cung cấp giải pháp toàn diện từ nghiên cứu phát triển đến sản xuất</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-industry service-icon"></i>
+          <h3>OEM/ODM/OBM</h3>
+          <p>Phát triển và sản xuất sản phẩm theo yêu cầu của khách hàng với công nghệ tiên tiến.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-flask service-icon"></i>
+          <h3>Nghiên cứu & Phát triển</h3>
+          <p>Đội ngũ R&D sáng tạo, không ngừng cập nhật xu hướng mới nhất trong ngành.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-certificate service-icon"></i>
+          <h3>Chứng nhận & Tiêu chuẩn</h3>
+          <p>Đáp ứng các tiêu chuẩn quốc tế như ISO 9001, ISO 22716 và các quy định nghiêm ngặt.</p>
+        </div>
+      </div>
     </div>
-    <div class="product">
-      <h3>Mỹ phẩm chức năng</h3>
-      <p>Sản phẩm đặc trị các vấn đề về da như lão hóa, nám, mụn.</p>
+  </section>
+
+  <section id="products" class="products">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Sản phẩm nổi bật</h2>
+        <p>Khám phá các dòng sản phẩm chất lượng cao của chúng tôi</p>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1612817288484-6f916006741a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')"></div>
+          <div class="product-content">
+            <h3>Skin Booster</h3>
+            <p>Sản phẩm tăng cường dưỡng chất cho da, giúp da khỏe mạnh và rạng rỡ.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1570554886111-e80fc538d6d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')"></div>
+          <div class="product-content">
+            <h3>Chăm sóc da</h3>
+            <p>Dòng sản phẩm chăm sóc da toàn diện, phù hợp với mọi loại da.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')"></div>
+          <div class="product-content">
+            <h3>Mỹ phẩm chức năng</h3>
+            <p>Sản phẩm đặc trị các vấn đề về da như lão hóa, nám, mụn.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="news">
-  <h2>Tin tức & Hỗ trợ</h2>
-  <div>
-    <h3>CMED ký kết hợp tác phân phối tại Việt Nam</h3>
-    <p>Chúng tôi tự hào thông báo về việc ký kết hợp tác phân phối sản phẩm tại thị trường Việt Nam, mở rộng mạng lưới toàn cầu.</p>
-  </div>
-  <div>
-    <h3>Hội chợ KIMES 2024</h3>
-    <p>CMED sẽ tham gia triển lãm KIMES 2024 tại Seoul, Hàn Quốc. Hãy đến thăm gian hàng của chúng tôi để trải nghiệm sản phẩm mới nhất.</p>
-  </div>
-</section>
+  <section id="news">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Tin tức & Sự kiện</h2>
+        <p>Cập nhật những thông tin mới nhất về CMED</p>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1557425955-df376b5903c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')"></div>
+          <div class="news-content">
+            <div class="news-date">15 Tháng 3, 2024</div>
+            <h3>CMED ký kết hợp tác phân phối tại Việt Nam</h3>
+            <p>Chúng tôi tự hào thông báo về việc ký kết hợp tác phân phối sản phẩm tại thị trường Việt Nam.</p>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')"></div>
+          <div class="news-content">
+            <div class="news-date">10 Tháng 3, 2024</div>
+            <h3>Hội chợ KIMES 2024</h3>
+            <p>CMED sẽ tham gia triển lãm KIMES 2024 tại Seoul, Hàn Quốc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>&copy; 2025 CMED Co., Ltd. | Địa chỉ: Tầng 5, 101 Ogeum-ro, Songpa-gu, Seoul, Hàn Quốc | Email: cmedemi@naver.com</p>
-</footer>
-
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Về CMED</h3>
+        <ul class="footer-links">
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tầm nhìn & Sứ mệnh</a></li>
+          <li><a href="#">Đội ngũ</a></li>
+          <li><a href="#">Chứng nhận</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Dịch vụ</h3>
+        <ul class="footer-links">
+          <li><a href="#">OEM/ODM/OBM</a></li>
+          <li><a href="#">R&D</a></li>
+          <li><a href="#">Sản xuất</a></li>
+          <li><a href="#">Tư vấn</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>Tầng 5, 101 Ogeum-ro, Songpa-gu,<br>Seoul, Hàn Quốc</p>
+        <p>Email: cmedemi@naver.com</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/PHAMZENY" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100007674820066" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 CMED Co., Ltd. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
